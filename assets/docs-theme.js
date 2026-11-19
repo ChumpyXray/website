@@ -1,7 +1,8 @@
 (() => {
   'use strict';
   const key = 'chumpy.site.theme';
-  const media = window.matchMedia('(prefers-color-scheme: dark)');
+  const media = typeof window.matchMedia === 'function'
+    ? window.matchMedia('(prefers-color-scheme: dark)') : { matches: false };
   let choice;
   try { choice = localStorage.getItem(key); } catch {}
   if (choice !== 'light' && choice !== 'dark') choice = null;
@@ -17,15 +18,21 @@
     }
   }
   apply();
-  document.addEventListener('DOMContentLoaded', () => {
+  document.addEventListener('click', event => {
+    const button = event.target.closest?.('#docs-theme-toggle');
+    if (!button) return;
+    choice = document.documentElement.dataset.docsTheme === 'dark' ? 'light' : 'dark';
+    try { localStorage.setItem(key, choice); } catch {}
     apply();
-    document.getElementById('docs-theme-toggle')?.addEventListener('click', () => {
-      choice = document.documentElement.dataset.docsTheme === 'dark' ? 'light' : 'dark';
-      try { localStorage.setItem(key, choice); } catch {}
-      apply();
-    });
-  }, { once: true });
-  media.addEventListener('change', () => { if (!choice) apply(); });
+  });
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', apply, { once: true });
+  } else {
+    apply();
+  }
+  const systemChanged = () => { if (!choice) apply(); };
+  if (media.addEventListener) media.addEventListener('change', systemChanged);
+  else if (media.addListener) media.addListener(systemChanged);
   window.addEventListener('storage', event => {
     if (event.key !== key && event.key !== null) return;
     choice = event.newValue === 'dark' || event.newValue === 'light' ? event.newValue : null;

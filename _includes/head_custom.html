@@ -1,1 +1,10 @@
-<script src="{{ '/assets/docs-theme.js' | relative_url }}"></script>
+<script>
+  (() => {
+    const sheet = document.querySelector('link[rel="stylesheet"]');
+    if (!sheet) return;
+    const url = new URL(sheet.href);
+    url.searchParams.set('v', '{{ site.time | date: "%s" }}');
+    sheet.href = url.href;
+  })();
+</script>
+<script src="{{ '/assets/docs-theme.js' | relative_url }}?v={{ site.time | date: '%s' }}"></script>
