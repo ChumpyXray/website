@@ -1,0 +1,12 @@
+$chumpy-blue: #496b91;
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+a { color: $chumpy-blue; }
+.site-title { font-weight: 650; }
+.main-content h1 { letter-spacing: -0.035em; }
+.main-content { line-height: 1.7; }
+.main-content table { border-radius: 12px; }
+.search-input { font-family: inherit; }

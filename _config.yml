@@ -1,0 +1,31 @@
+title: Chumpy
+description: Установка, подписки и настройки Chumpy
+url: https://chumpyxray.github.io
+baseurl: /website
+lang: ru
+remote_theme: just-the-docs/just-the-docs@v0.11.0
+color_scheme: light
+search_enabled: true
+search:
+  heading_level: 3
+  previews: 3
+  button: true
+heading_anchors: true
+aux_links:
+  Скачать Chumpy:
+    - https://github.com/ChumpyXray/Chumpy/releases/latest
+aux_links_new_tab: true
+plugins:
+  - jekyll-remote-theme
+  - jekyll-relative-links
+relative_links:
+  enabled: true
+  collections: false
+defaults:
+  - scope:
+      path: docs
+    values:
+      layout: default
+exclude:
+  - docs/SUMMARY.md
+  - docs/.gitbook.yaml
