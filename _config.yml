@@ -3,6 +3,7 @@ description: Установка, подписки и настройки Chumpy
 url: https://chumpyxray.github.io
 baseurl: /website
 lang: ru
+favicon_ico: /assets/logo.svg
 remote_theme: just-the-docs/just-the-docs@v0.11.0
 color_scheme: light
 search_enabled: true
