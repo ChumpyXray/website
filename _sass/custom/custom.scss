@@ -46,6 +46,9 @@ html[data-docs-theme="dark"] {
   background: #080a0c;
   body, .main, .main-content-wrap { background: #080a0c; color: #e3e6ea; }
   .side-bar, .site-header, .main-header { background: #101316; border-color: #30363d; }
+  .side-bar + .main .main-header { background: #101316; border-color: #30363d; }
+  .site-title:hover, .site-title:focus { background: #1b2530; }
+  .aux-nav, .aux-nav-list, .aux-nav-list-item { background: transparent; }
   .site-title, .main-content h1, .main-content h2, .main-content h3,
   .main-content h4, .main-content h5, .main-content h6 { color: #edf0f3; }
   a, .nav-list .nav-list-item > .nav-list-link { color: #adcef3; }
