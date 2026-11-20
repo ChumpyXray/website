@@ -22,3 +22,4 @@
 ## Для сервисов
 
 * [Ссылки и метаданные подписки](integration/subscriptions.md)
+* [Remnawave](integration/remnawave/README.md)

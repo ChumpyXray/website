@@ -23,7 +23,7 @@ chumpy://add/https://sub.example.com/example-token?format=xray
 </a>
 ```
 
-В Remnawave тип кнопки — `subscriptionLink`, значение — `chumpy://add/{{SUBSCRIPTION_LINK}}`. Готовый JSON и шаги импорта находятся в [папке Remnawave](https://github.com/ChumpyXray/Chumpy/tree/main/Remnawave).
+В Remnawave тип кнопки — `subscriptionLink`, значение — `chumpy://add/{{SUBSCRIPTION_LINK}}`. Готовый JSON и шаги импорта находятся в [папке Remnawave](remnawave/README.md).
 
 ## Что Chumpy отправляет серверу
 
